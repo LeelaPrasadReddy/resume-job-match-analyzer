@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Job Match Analyzer</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+    <div class="container">
+        <h1>Resume Job Match Analyzer</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form
+            action="/analyze"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+            <label for="resume">
+                Upload Your Resume PDF
+            </label>
+
+            <input
+                type="file"
+                id="resume"
+                name="resume"
+                accept=".pdf,application/pdf"
+                required
+            >
+
+            <label for="job_description">
+                Job Description
+            </label>
+
+            <textarea
+                id="job_description"
+                name="job_description"
+                placeholder="Paste the job description here..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Analyze Match
+            </button>
+        </form>
+    </div>
+</body>
+</html>

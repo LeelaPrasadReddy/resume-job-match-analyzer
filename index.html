@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>International Student Career Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>International Student Career Navigator</h1>
+    <div class="container">
+    <!-- your existing result content -->
+    </div>
+
+    <p>Analyze how well your resume matches a job.</p>
+
+    <form method="POST" action="/analyze">
+        <h2>Your Resume</h2>
+
+        <textarea
+            name="resume"
+            rows="12"
+            cols="80"
+            placeholder="Paste your resume here..."
+            required></textarea>
+
+        <h2>Job Description</h2>
+
+        <textarea
+            name="job_description"
+            rows="12"
+            cols="80"
+            placeholder="Paste the job description here..."
+            required></textarea>
+
+        <br><br>
+
+        <button type="submit">Analyze Job Match</button>
+    </form>
+</body>
+</html>
